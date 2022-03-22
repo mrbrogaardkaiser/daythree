@@ -3,7 +3,7 @@
 
 document.getElementById("btn-get").onclick = getUser;
 
-document.getElementById("btn-get-all").onclick = getAllUsers
+document.getElementById("btn-get-all").onclick = getAllUsers;
 
 function getAllUsers(){
     fetch("https://jsonplaceholder.typicode.com/users/")

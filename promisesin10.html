@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises in 10 minutes</title>
+  </head>
+  <body>
+    <script>
+      // eksempel 1
+
+      /*
+      let p = new Promise((resolve, reject) => {
+        let a = 1 + 2;
+        if (a == 2) {
+          resolve("Succes");
+        } else reject("Failed");
+      });
+
+      p.then((message) => {
+        console.log("This is in the then " + message);
+      }).catch((message) => {
+        console.log("This is in the catch " + message);
+      });*/
+
+      // Eksempel 2
+
+      /*
+      const userLeft = true;
+      const userWatchingCatMeme = false;
+
+      function watchTutorialPromise() {
+        return new Promise((resolve, reject) => {
+          if (userLeft) {
+            reject({
+              name: "User Left",
+              message: ":(",
+            });
+          } else if (userWatchingCatMeme) {
+            reject({
+              name: "User Watching Cat Meme",
+              message: "WebDevSimplified < Cat",
+            });
+          } else {
+            resolve("Thumbs up and subscribe");
+          }
+        });
+      }
+
+      watchTutorialPromise()
+        .then((message) => {
+          console.log("Succes " + message);
+        })
+        .catch((error) => {
+          console.log(error.name + " " + error.message);
+        });*/
+
+      // Eksempel 3
+
+      const recordVideoOne = new Promise((resolve, reject) => {
+        resolve("Video 1 Recorded");
+      });
+      const recordVideoTwo = new Promise((resolve, reject) => {
+        resolve("Video 2 Recorded");
+      });
+      const recordVideoThree = new Promise((resolve, reject) => {
+        resolve("Video 3 Recorded");
+      });
+
+      Promise.all([recordVideoOne, recordVideoTwo, recordVideoThree]).then(
+        (messages) => {
+          console.log(messages);
+        }
+      );
+    </script>
+  </body>
+</html>
